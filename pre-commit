@@ -1,0 +1,3 @@
+#!/bin/sh
+echo "dddd"
+python.exe .git/hooks/pyv8unpack.py
