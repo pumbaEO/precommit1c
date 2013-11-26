@@ -76,13 +76,13 @@ def checker():
 
         #Скопируем сначало просто структуру каталогов.
         if not os.path.exists(dirsource):
-        	os.mkdir(dirsource)
+            os.makedirs(dirsource)
         #для каждого файла определим новую папку.
         newsourcepath = os.path.join(dirsource, newdirname, basename)
         logging.info("create new dir %s" % newsourcepath)
         if not os.path.exists(newsourcepath):
             logging.info("create new dir %s" % newsourcepath)
-            os.mkdir(newsourcepath)
+            os.makedirs(newsourcepath)
 
         logging.info("file to copy %s, new path %s, new file %s" % (filename, newsourcepath,
                       os.path.join(newsourcepath,fullbasename)))
