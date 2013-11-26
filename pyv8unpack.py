@@ -8,10 +8,7 @@ from os.path import exists
 import logging
 import tempfile
 
-logging.basicConfig(level=logging.INFO)  # DEBUG => print ALL msgs
-logging.debug('This message should go to the log file')
-logging.info('So should this')
-logging.warning('And this, too')
+logging.basicConfig(level=logging.ERROR)  # DEBUG => print ALL msgs
 
 def get_list_of_comitted_files():
     """
@@ -79,8 +76,8 @@ def checker():
 
         #Скопируем сначало просто структуру каталогов.
         if not os.path.exists(dirsource):
-            shutil.copytree(os.path.curdir, dirsource, False, _copyonlydirs)
-        #для каждого файла определим
+        	os.mkdir(dirsource)
+        #для каждого файла определим новую папку.
         newsourcepath = os.path.join(dirsource, newdirname, basename)
         logging.info("create new dir %s" % newsourcepath)
         if not os.path.exists(newsourcepath):
@@ -98,14 +95,13 @@ def checker():
         logging.info(V8Reader)
         tempbat = tempfile.mktemp(".bat")
         logging.info(tempbat)
-        
+
         with open(tempbat, 'w', encoding='cp866') as temp:
             temp.write('@echo off\n')
             temp.write(format('"%s" %s /DisableStartupMessages %s %s'%(pathbin1c, base, V8Reader, formatstring)))
             temp.close()
-            result = subprocess.check_call(['cmd.exe', '/K', tempbat])
+            result = subprocess.check_call(['cmd.exe', '/C', tempbat])
             result = subprocess.check_call(['git', 'add', newsourcepath])
-        
         #shutil.copyfile(filename, os.path.join(newsourcepath, fullbasename))
 
 
