@@ -7,40 +7,37 @@ import shutil
 from os.path import exists
 import logging
 import tempfile
+import re
 
 logging.basicConfig(level=logging.ERROR)  # DEBUG => print ALL msgs
+
+modified = re.compile('^(?:M|A)(\s+)(?P<name>.*)')
+
 
 def get_list_of_comitted_files():
     """
     Retun a list of files abouts to be decompile
     """
-
     files = []
     output = []
     try:
-        output = subprocess.check_output(['git','diff-index', '--cached','HEAD']).decode("utf-8")
+        output = subprocess.check_output(['git','diff-index', '--name-status', '--cached','HEAD']
+            ).decode("utf-8")
     except subprocess.CalledProcessError:
         print("Error diff files get: trace %s" % subprocess.CalledProcessError.output)
         return files
 
-
     for result in output.split("\n"):
+        logging.info(result)
         if result != '':
-            result = result.split()
-            if result[4] in ['A', 'M']:
-                files.append(result[5])
+            match = modified.match(result)
+            if match:
+                files.append(match.group('name'))
 
     return files
 
-def _copyonlydirs(path, names):
-    result = []
-    for name in names:
-        if os.path.isfile(os.path.join(path, name, os.path.sep)):
-            result.append(name)
-    logging.info('Working in %s' % path)
-    return result
 
-def checker():
+def decompile():
     """
     Main functions doing be decompile
     """
@@ -54,7 +51,8 @@ def checker():
     #Find datapocessor files
     for filename in get_list_of_comitted_files():
         #Check the file extensions
-        if filename[-3:] in ['epf', 'erf', '.py']:
+        logging.info("file to check %s" % filename)
+        if filename[-3:] in ['epf', 'erf']:
             dataprocessor_files.append(filename)
             logging.info("file %s" % filename)
             continue
@@ -64,6 +62,7 @@ def checker():
     dirsource = os.path.abspath(os.path.join(os.path.curdir, "src"))
     curabsdirpath = os.path.abspath(os.path.curdir)
     pathbin1c = "C:\\Program Files\\1cv82\8.2.17.153\\bin\\1cv8.exe"
+    pathbin1c = "c:\\Program Files (x86)\\1cv8\\8.3.4.304\\bin\\1cv8.exe"
 
     for filename in dataprocessor_files:
         print("file %s" % filename)
@@ -79,7 +78,6 @@ def checker():
             os.makedirs(dirsource)
         #для каждого файла определим новую папку.
         newsourcepath = os.path.join(dirsource, newdirname, basename)
-        logging.info("create new dir %s" % newsourcepath)
         if not os.path.exists(newsourcepath):
             logging.info("create new dir %s" % newsourcepath)
             os.makedirs(newsourcepath)
@@ -90,20 +88,19 @@ def checker():
         formatstring = format('/C"decompile;pathtocf;%s;pathout;%s;ЗавершитьРаботуПосле;"' % (fullpathfile, newsourcepath))
         base = '/F"'+os.path.join(curabsdirpath,".git", "hooks","ibService")+'"'
         V8Reader = '/execute"'+os.path.join(curabsdirpath,".git", "hooks", "V8Reader.epf")+'"'
-        logging.info(formatstring)
-        logging.info(base)
-        logging.info(V8Reader)
         tempbat = tempfile.mktemp(".bat")
-        logging.info(tempbat)
+        logging.info("formatstring is %s , base is %s, V8Reader is %s, temp is %s" % (formatstring, base, V8Reader, tempbat))
 
         with open(tempbat, 'w', encoding='cp866') as temp:
             temp.write('@echo off\n')
             temp.write(format('"%s" %s /DisableStartupMessages %s %s'%(pathbin1c, base, V8Reader, formatstring)))
             temp.close()
             result = subprocess.check_call(['cmd.exe', '/C', tempbat])
-            result = subprocess.check_call(['git', 'add', newsourcepath])
-        #shutil.copyfile(filename, os.path.join(newsourcepath, fullbasename))
+            result = subprocess.check_call(['git', 'add', '--all', newsourcepath])
+            if not result == 0:
+                logging.error(result)
+                exit(result)
 
 
 if __name__ == '__main__':
-    checker()
+    decompile()
