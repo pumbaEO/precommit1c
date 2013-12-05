@@ -1,27 +1,27 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <AppearanceTemplate xmlns="http://v8.1c.ru/8.1/data-composition-system/appearance-template" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<dcscor:item>
-		<dcscor:parameter>GroupHeader</dcscor:parameter>
+		<dcscor:parameter>ЗаголовокГруппировки</dcscor:parameter>
 		<dcscor:value xsi:type="AppearanceTemplateArea">
 			<item>
 				<level>1</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BackColor</dcscor:parameter>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportGroup1BackColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -30,21 +30,21 @@
 				<level>2</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BackColor</dcscor:parameter>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportGroup2BackColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -53,11 +53,11 @@
 				<level>0</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
@@ -67,27 +67,27 @@
 		</dcscor:value>
 	</dcscor:item>
 	<dcscor:item>
-		<dcscor:parameter>GroupFooter</dcscor:parameter>
+		<dcscor:parameter>ПодвалГруппировки</dcscor:parameter>
 		<dcscor:value xsi:type="AppearanceTemplateArea">
 			<item>
 				<level>1</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BackColor</dcscor:parameter>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportGroup1BackColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -96,21 +96,21 @@
 				<level>2</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BackColor</dcscor:parameter>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportGroup2BackColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -119,11 +119,11 @@
 				<level>0</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
@@ -133,27 +133,27 @@
 		</dcscor:value>
 	</dcscor:item>
 	<dcscor:item>
-		<dcscor:parameter>HierarchicalGroupHeader</dcscor:parameter>
+		<dcscor:parameter>ЗаголовокИерархическойГруппировки</dcscor:parameter>
 		<dcscor:value xsi:type="AppearanceTemplateArea">
 			<item>
 				<level>1</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BackColor</dcscor:parameter>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportGroup1BackColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -162,21 +162,21 @@
 				<level>2</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BackColor</dcscor:parameter>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportGroup2BackColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -185,11 +185,11 @@
 				<level>0</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
@@ -199,27 +199,27 @@
 		</dcscor:value>
 	</dcscor:item>
 	<dcscor:item>
-		<dcscor:parameter>HierarchicalGroupFooter</dcscor:parameter>
+		<dcscor:parameter>ПодвалИерархическойГруппировки</dcscor:parameter>
 		<dcscor:value xsi:type="AppearanceTemplateArea">
 			<item>
 				<level>1</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BackColor</dcscor:parameter>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportGroup1BackColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -228,21 +228,21 @@
 				<level>2</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BackColor</dcscor:parameter>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportGroup2BackColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -251,11 +251,11 @@
 				<level>0</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
@@ -265,13 +265,13 @@
 		</dcscor:value>
 	</dcscor:item>
 	<dcscor:item>
-		<dcscor:parameter>ListGroupHeader</dcscor:parameter>
+		<dcscor:parameter>ЗаголовокГруппировкиСписка</dcscor:parameter>
 		<dcscor:value xsi:type="AppearanceTemplateArea">
 			<item>
 				<level>1</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="14" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -280,7 +280,7 @@
 				<level>2</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="12" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -289,7 +289,7 @@
 				<level>3</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="10" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -298,7 +298,7 @@
 				<level>0</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="8" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -306,13 +306,13 @@
 		</dcscor:value>
 	</dcscor:item>
 	<dcscor:item>
-		<dcscor:parameter>ListGroupFooter</dcscor:parameter>
+		<dcscor:parameter>ПодвалГруппировкиСписка</dcscor:parameter>
 		<dcscor:value xsi:type="AppearanceTemplateArea">
 			<item>
 				<level>1</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="14" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -321,7 +321,7 @@
 				<level>2</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="12" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -330,7 +330,7 @@
 				<level>3</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="10" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -339,7 +339,7 @@
 				<level>0</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="8" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -347,13 +347,13 @@
 		</dcscor:value>
 	</dcscor:item>
 	<dcscor:item>
-		<dcscor:parameter>ListHierarchicalGroupHeader</dcscor:parameter>
+		<dcscor:parameter>ЗаголовокИерархическойГруппировкиСписка</dcscor:parameter>
 		<dcscor:value xsi:type="AppearanceTemplateArea">
 			<item>
 				<level>1</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="14" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -362,7 +362,7 @@
 				<level>2</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="12" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -371,7 +371,7 @@
 				<level>3</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="10" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -380,7 +380,7 @@
 				<level>0</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="8" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -388,13 +388,13 @@
 		</dcscor:value>
 	</dcscor:item>
 	<dcscor:item>
-		<dcscor:parameter>ListHierarchicalGroupFooter</dcscor:parameter>
+		<dcscor:parameter>ПодвалИерархическойГруппировкиСписка</dcscor:parameter>
 		<dcscor:value xsi:type="AppearanceTemplateArea">
 			<item>
 				<level>1</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="14" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -403,7 +403,7 @@
 				<level>2</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="12" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -412,7 +412,7 @@
 				<level>3</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="10" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -421,7 +421,7 @@
 				<level>0</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="8" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -429,31 +429,31 @@
 		</dcscor:value>
 	</dcscor:item>
 	<dcscor:item>
-		<dcscor:parameter>ColumnGroupHeader</dcscor:parameter>
+		<dcscor:parameter>ЗаголовокГруппировкиКолонки</dcscor:parameter>
 		<dcscor:value xsi:type="AppearanceTemplateArea">
 			<item>
 				<level>0</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BackColor</dcscor:parameter>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportHeaderBackColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="10" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>ColumnSizeChangeMode</dcscor:parameter>
+						<dcscor:parameter>РежимИзмененияРазмераКолонки</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:SizeChangeMode">QuickChange</dcscor:value>
 					</dcscor:item>
 				</appearance>
@@ -461,31 +461,31 @@
 		</dcscor:value>
 	</dcscor:item>
 	<dcscor:item>
-		<dcscor:parameter>ColumnGroupFooter</dcscor:parameter>
+		<dcscor:parameter>ПодвалГруппировкиКолонки</dcscor:parameter>
 		<dcscor:value xsi:type="AppearanceTemplateArea">
 			<item>
 				<level>0</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BackColor</dcscor:parameter>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportHeaderBackColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="10" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>ColumnSizeChangeMode</dcscor:parameter>
+						<dcscor:parameter>РежимИзмененияРазмераКолонки</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:SizeChangeMode">QuickChange</dcscor:value>
 					</dcscor:item>
 				</appearance>
@@ -493,31 +493,31 @@
 		</dcscor:value>
 	</dcscor:item>
 	<dcscor:item>
-		<dcscor:parameter>ColumnHierarchicalGroupHeader</dcscor:parameter>
+		<dcscor:parameter>ЗаголовокИерархическойГруппировкиКолонки</dcscor:parameter>
 		<dcscor:value xsi:type="AppearanceTemplateArea">
 			<item>
 				<level>0</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BackColor</dcscor:parameter>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportHeaderBackColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="10" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>ColumnSizeChangeMode</dcscor:parameter>
+						<dcscor:parameter>РежимИзмененияРазмераКолонки</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:SizeChangeMode">QuickChange</dcscor:value>
 					</dcscor:item>
 				</appearance>
@@ -525,31 +525,31 @@
 		</dcscor:value>
 	</dcscor:item>
 	<dcscor:item>
-		<dcscor:parameter>ColumnHierarchicalGroupFooter</dcscor:parameter>
+		<dcscor:parameter>ПодвалИерархическойГруппировкиКолонки</dcscor:parameter>
 		<dcscor:value xsi:type="AppearanceTemplateArea">
 			<item>
 				<level>0</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BackColor</dcscor:parameter>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportHeaderBackColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="10" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>ColumnSizeChangeMode</dcscor:parameter>
+						<dcscor:parameter>РежимИзмененияРазмераКолонки</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:SizeChangeMode">QuickChange</dcscor:value>
 					</dcscor:item>
 				</appearance>
@@ -557,23 +557,23 @@
 		</dcscor:value>
 	</dcscor:item>
 	<dcscor:item>
-		<dcscor:parameter>Detail</dcscor:parameter>
+		<dcscor:parameter>ДетальныеЗаписи</dcscor:parameter>
 		<dcscor:value xsi:type="AppearanceTemplateArea">
 			<item>
 				<level>0</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -581,27 +581,27 @@
 		</dcscor:value>
 	</dcscor:item>
 	<dcscor:item>
-		<dcscor:parameter>ResourcesGroupHeader</dcscor:parameter>
+		<dcscor:parameter>РесурсыЗаголовкаГруппировки</dcscor:parameter>
 		<dcscor:value xsi:type="AppearanceTemplateArea">
 			<item>
 				<level>1</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BackColor</dcscor:parameter>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportGroup1BackColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -610,21 +610,21 @@
 				<level>2</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BackColor</dcscor:parameter>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportGroup2BackColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -633,11 +633,11 @@
 				<level>0</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
@@ -647,27 +647,27 @@
 		</dcscor:value>
 	</dcscor:item>
 	<dcscor:item>
-		<dcscor:parameter>ResourcesGroupFooter</dcscor:parameter>
+		<dcscor:parameter>РесурсыПодвалаГруппировки</dcscor:parameter>
 		<dcscor:value xsi:type="AppearanceTemplateArea">
 			<item>
 				<level>1</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BackColor</dcscor:parameter>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportGroup1BackColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -676,21 +676,21 @@
 				<level>2</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BackColor</dcscor:parameter>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportGroup2BackColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -699,11 +699,11 @@
 				<level>0</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
@@ -713,27 +713,27 @@
 		</dcscor:value>
 	</dcscor:item>
 	<dcscor:item>
-		<dcscor:parameter>ResourcesHierarchicalGroupHeader</dcscor:parameter>
+		<dcscor:parameter>РесурсыЗаголовкаИерархическойГруппировки</dcscor:parameter>
 		<dcscor:value xsi:type="AppearanceTemplateArea">
 			<item>
 				<level>1</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BackColor</dcscor:parameter>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportGroup1BackColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -742,21 +742,21 @@
 				<level>2</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BackColor</dcscor:parameter>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportGroup2BackColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -765,11 +765,11 @@
 				<level>0</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
@@ -779,27 +779,27 @@
 		</dcscor:value>
 	</dcscor:item>
 	<dcscor:item>
-		<dcscor:parameter>ResourcesHierarchicalGroupFooter</dcscor:parameter>
+		<dcscor:parameter>РесурсыПодвалаИерархическойГруппировки</dcscor:parameter>
 		<dcscor:value xsi:type="AppearanceTemplateArea">
 			<item>
 				<level>1</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BackColor</dcscor:parameter>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportGroup1BackColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -808,21 +808,21 @@
 				<level>2</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BackColor</dcscor:parameter>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportGroup2BackColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -831,11 +831,11 @@
 				<level>0</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
@@ -845,23 +845,23 @@
 		</dcscor:value>
 	</dcscor:item>
 	<dcscor:item>
-		<dcscor:parameter>ResourcesDetail</dcscor:parameter>
+		<dcscor:parameter>РесурсыДетальныхЗаписей</dcscor:parameter>
 		<dcscor:value xsi:type="AppearanceTemplateArea">
 			<item>
 				<level>0</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -869,27 +869,27 @@
 		</dcscor:value>
 	</dcscor:item>
 	<dcscor:item>
-		<dcscor:parameter>ResourcesTotalGroupHeader</dcscor:parameter>
+		<dcscor:parameter>ИтогПоРесурсамЗаголовкаГруппировки</dcscor:parameter>
 		<dcscor:value xsi:type="AppearanceTemplateArea">
 			<item>
 				<level>1</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BackColor</dcscor:parameter>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportGroup1BackColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -898,21 +898,21 @@
 				<level>2</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BackColor</dcscor:parameter>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportGroup2BackColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -921,11 +921,11 @@
 				<level>0</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
@@ -935,27 +935,27 @@
 		</dcscor:value>
 	</dcscor:item>
 	<dcscor:item>
-		<dcscor:parameter>ResourcesTotalGroupFooter</dcscor:parameter>
+		<dcscor:parameter>ИтогПоРесурсамПодвалаГруппировки</dcscor:parameter>
 		<dcscor:value xsi:type="AppearanceTemplateArea">
 			<item>
 				<level>1</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BackColor</dcscor:parameter>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportGroup1BackColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -964,21 +964,21 @@
 				<level>2</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BackColor</dcscor:parameter>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportGroup2BackColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -987,11 +987,11 @@
 				<level>0</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
@@ -1001,27 +1001,27 @@
 		</dcscor:value>
 	</dcscor:item>
 	<dcscor:item>
-		<dcscor:parameter>ResourcesTotalHierarchicalGroupHeader</dcscor:parameter>
+		<dcscor:parameter>ИтогПоРесурсамЗаголовкаИерархическойГруппировки</dcscor:parameter>
 		<dcscor:value xsi:type="AppearanceTemplateArea">
 			<item>
 				<level>1</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BackColor</dcscor:parameter>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportGroup1BackColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -1030,21 +1030,21 @@
 				<level>2</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BackColor</dcscor:parameter>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportGroup2BackColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -1053,11 +1053,11 @@
 				<level>0</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
@@ -1067,27 +1067,27 @@
 		</dcscor:value>
 	</dcscor:item>
 	<dcscor:item>
-		<dcscor:parameter>ResourcesTotalHierarchicalGroupFooter</dcscor:parameter>
+		<dcscor:parameter>ИтогПоРесурсамПодвалаИерархическойГруппировки</dcscor:parameter>
 		<dcscor:value xsi:type="AppearanceTemplateArea">
 			<item>
 				<level>1</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BackColor</dcscor:parameter>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportGroup1BackColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -1096,21 +1096,21 @@
 				<level>2</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BackColor</dcscor:parameter>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportGroup2BackColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -1119,11 +1119,11 @@
 				<level>0</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
@@ -1134,23 +1134,23 @@
 	</dcscor:item>
 	<dcscor:item>
 		<dcscor:use>false</dcscor:use>
-		<dcscor:parameter>ResourcesTotalDetail</dcscor:parameter>
+		<dcscor:parameter>ИтогПоРесурсамДетальныхЗаписей</dcscor:parameter>
 		<dcscor:value xsi:type="AppearanceTemplateArea">
 			<item>
 				<level>0</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="8" bold="false" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -1158,27 +1158,27 @@
 		</dcscor:value>
 	</dcscor:item>
 	<dcscor:item>
-		<dcscor:parameter>VerticalOverall</dcscor:parameter>
+		<dcscor:parameter>ОбщиеИтогиПоВертикали</dcscor:parameter>
 		<dcscor:value xsi:type="AppearanceTemplateArea">
 			<item>
 				<level>1</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BackColor</dcscor:parameter>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportHeaderBackColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="10" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -1187,21 +1187,21 @@
 				<level>2</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BackColor</dcscor:parameter>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportGroup2BackColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -1209,13 +1209,13 @@
 		</dcscor:value>
 	</dcscor:item>
 	<dcscor:item>
-		<dcscor:parameter>ListVerticalOverall</dcscor:parameter>
+		<dcscor:parameter>ОбщиеИтогиПоВертикалиСписка</dcscor:parameter>
 		<dcscor:value xsi:type="AppearanceTemplateArea">
 			<item>
 				<level>1</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="14" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -1224,7 +1224,7 @@
 				<level>2</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="12" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -1233,7 +1233,7 @@
 				<level>3</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="10" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -1242,7 +1242,7 @@
 				<level>0</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="8" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -1250,72 +1250,72 @@
 		</dcscor:value>
 	</dcscor:item>
 	<dcscor:item>
-		<dcscor:parameter>TableHeader</dcscor:parameter>
+		<dcscor:parameter>ЗаголовокТаблицы</dcscor:parameter>
 		<dcscor:value xsi:type="AppearanceTemplateArea">
 			<item>
 				<level>0</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>BackColor</dcscor:parameter>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportHeaderBackColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>BorderColor</dcscor:parameter>
+						<dcscor:parameter>ЦветГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">style:ReportLineColor</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
 						<dcscor:use>false</dcscor:use>
-						<dcscor:parameter>BorderStyle</dcscor:parameter>
+						<dcscor:parameter>СтильГраницы</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 						</dcscor:value>
 						<dcscor:item>
-							<dcscor:parameter>BorderStyle.Left</dcscor:parameter>
+							<dcscor:parameter>СтильГраницы.Слева</dcscor:parameter>
 							<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 								<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 							</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
-							<dcscor:parameter>BorderStyle.Top</dcscor:parameter>
+							<dcscor:parameter>СтильГраницы.Сверху</dcscor:parameter>
 							<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 								<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 							</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
-							<dcscor:parameter>BorderStyle.Right</dcscor:parameter>
+							<dcscor:parameter>СтильГраницы.Справа</dcscor:parameter>
 							<dcscor:value xsi:type="v8ui:Line" width="3" gap="false">
 								<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 							</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
-							<dcscor:parameter>BorderStyle.Bottom</dcscor:parameter>
+							<dcscor:parameter>СтильГраницы.Снизу</dcscor:parameter>
 							<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
 								<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
 							</dcscor:value>
 						</dcscor:item>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="10" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>HorizontalAlign</dcscor:parameter>
+						<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>VerticalAlign</dcscor:parameter>
+						<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>TextOrientation</dcscor:parameter>
+						<dcscor:parameter>ОриентацияТекста</dcscor:parameter>
 						<dcscor:value xsi:type="xs:decimal">90</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>MaximumHeight</dcscor:parameter>
+						<dcscor:parameter>МаксимальнаяВысота</dcscor:parameter>
 						<dcscor:value xsi:type="xs:decimal">90</dcscor:value>
 					</dcscor:item>
 					<dcscor:item>
-						<dcscor:parameter>ColumnSizeChangeMode</dcscor:parameter>
+						<dcscor:parameter>РежимИзмененияРазмераКолонки</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:SizeChangeMode">QuickChange</dcscor:value>
 					</dcscor:item>
 				</appearance>
@@ -1323,17 +1323,17 @@
 		</dcscor:value>
 	</dcscor:item>
 	<dcscor:item>
-		<dcscor:parameter>Default</dcscor:parameter>
+		<dcscor:parameter>ПоУмолчанию</dcscor:parameter>
 		<dcscor:value xsi:nil="true"/>
 	</dcscor:item>
 	<dcscor:item>
-		<dcscor:parameter>Title</dcscor:parameter>
+		<dcscor:parameter>Заголовок</dcscor:parameter>
 		<dcscor:value xsi:type="AppearanceTemplateArea">
 			<item>
 				<level>1</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="18" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -1342,7 +1342,7 @@
 				<level>2</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="16" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -1351,7 +1351,7 @@
 				<level>0</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -1360,7 +1360,7 @@
 				<level>3</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="13" bold="true" italic="true" underline="false" strikeout="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
@@ -1368,13 +1368,13 @@
 		</dcscor:value>
 	</dcscor:item>
 	<dcscor:item>
-		<dcscor:parameter>Information</dcscor:parameter>
+		<dcscor:parameter>Информация</dcscor:parameter>
 		<dcscor:value xsi:type="AppearanceTemplateArea">
 			<item>
 				<level>0</level>
 				<appearance>
 					<dcscor:item>
-						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:parameter>Шрифт</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="10" bold="false" kind="WindowsFont"/>
 					</dcscor:item>
 				</appearance>
