@@ -26,6 +26,22 @@ def get_path_to_1c():
     cmd = os.getenv("PATH1C")
     if not cmd is None:
         return os.getenv("PATH1C")
+
+    #read config
+    config = None
+    for loc in os.curdir, os.path.expanduser("~"):
+        try:
+            with open(os.path.join(loc,"precommit1c.conf")) as source:
+                from configparser import ConfigParser
+                config = ConfigParser(source)
+                break
+        except IOError:
+            pass
+
+    if not config is None:
+        cmd = config.get("DEFAULT", "onecplatfrorms")
+        return cmd
+
     
     if platform.system() == "Darwin":
         raise Exception("MacOS not run 1C")
