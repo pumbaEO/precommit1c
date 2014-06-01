@@ -25,7 +25,16 @@ def get_path_to_1c():
     
     cmd = os.getenv("PATH1C")
     if not cmd is None:
-        return os.getenv("PATH1C")
+        cmd = os.path.join(cmd, "1cv8")
+        maxversion =  max(list(filter((lambda x: '8.' in x), os.listdir(cmd))))
+        if maxversion is None:
+            raise Exception("not found verion dirs")
+        cmd = os.path.join(cmd, maxversion + os.path.sep + "bin"+os.path.sep+"1cv8.exe")
+
+        if not os.path.isfile(cmd):
+            raise Exception("file not found %s" %(cmd))
+             
+        return cmd
 
     #read config
     config = None
@@ -111,7 +120,7 @@ def decompile():
     if len(dataprocessor_files) == 0:
         exit(exit_code)
 
-    dirsource = os.path.abspath(os.path.join(os.path.curdir, "src"))
+    dirsource = os.path.abspath(os.path.join(os.path.curdir, "plugins-source"))
     curabsdirpath = os.path.abspath(os.path.curdir)
     #pathbin1c = "C:\\Program Files\\1cv82\8.2.17.153\\bin\\1cv8.exe"
     #pathbin1c = "c:\\Program Files (x86)\\1cv8\\8.3.4.304\\bin\\1cv8.exe"
