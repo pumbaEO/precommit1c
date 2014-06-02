@@ -28,18 +28,27 @@ def get_path_to_1c():
         return os.getenv("PATH1C")
 
     #read config
+    curdir = os.curdir
+    if '__file__' in globals():
+        curdir = os.path.dirname(os.path.abspath(__file__))
+
     config = None
-    for loc in os.curdir, os.path.expanduser("~"):
+    for loc in curdir, os.curdir, os.path.expanduser("~"):
         try:
-            with open(os.path.join(loc,"precommit1c.conf")) as source:
-                from configparser import ConfigParser
-                config = ConfigParser(source)
+            with open(os.path.join(loc, "precommit1c.ini")) as source:
+                if sys.version_info<(3,0,0):
+                    from ConfigParser import ConfigParser
+                else:
+                    from configparser import ConfigParser
+
+                config = ConfigParser()
+                config.read_file(source)
                 break
         except IOError:
             pass
 
-    if not config is None:
-        cmd = config.get("DEFAULT", "onecplatfrorms")
+    if not config is None and config.has_option("DEFAULT", "onecplatfrorm"):
+        cmd = config.get("DEFAULT", "onecplatfrorm")
         return cmd
 
     
