@@ -14,32 +14,16 @@ logging.basicConfig(level=logging.ERROR)  # DEBUG => print ALL msgs
 
 modified = re.compile('^(?:M|A)(\s+)(?P<name>.*)')
 
-def get_path_to_1c():
+
+def get_config_param(param):
     '''
-    get path to 1c binary. 
-    fist env, "PATH1C" 
-    two env "PROGRAMFILES" on windows
-    three /opt/1c - only linux
-    
+    parse config file and find in them source dir 
     '''
     
-    cmd = os.getenv("PATH1C")
-    if not cmd is None:
-        cmd = os.path.join(cmd, "1cv8")
-        maxversion =  max(list(filter((lambda x: '8.' in x), os.listdir(cmd))))
-        if maxversion is None:
-            raise Exception("not found verion dirs")
-        cmd = os.path.join(cmd, maxversion + os.path.sep + "bin"+os.path.sep+"1cv8.exe")
-
-        if not os.path.isfile(cmd):
-            raise Exception("file not found %s" %(cmd))
-             
-        return cmd
-
-    #read config
     curdir = os.curdir
     if '__file__' in globals():
         curdir = os.path.dirname(os.path.abspath(__file__))
+
 
     config = None
     for loc in curdir, os.curdir, os.path.expanduser("~"):
@@ -56,10 +40,47 @@ def get_path_to_1c():
         except IOError:
             pass
 
-    if not config is None and config.has_option("DEFAULT", "onecplatfrorm"):
-        cmd = config.get("DEFAULT", "onecplatfrorm")
+    if not config is None and config.has_option("DEFAULT", param):
+        value = config.get("DEFAULT", param)
+        return value
+        
+
+    return None
+
+
+def get_path_to_1c():
+    """
+    get path to 1c binary. 
+    fist env, "PATH1C" 
+    two env "PROGRAMFILES" on windows
+    three /opt/1c - only linux
+    
+    """
+    
+    cmd = os.getenv("PATH1C")
+    if not cmd is None:
+        cmd = os.path.join(cmd, "1cv8")
+        maxversion =  max(list(filter((lambda x: '8.' in x), os.listdir(cmd))))
+        if maxversion is None:
+            raise Exception("not found verion dirs")
+        cmd = os.path.join(cmd, maxversion + os.path.sep + "bin"+os.path.sep+"1cv8.exe")
+
+        if not os.path.isfile(cmd):
+            raise Exception("file not found %s" %(cmd))
+             
         return cmd
 
+    #read config
+
+
+    curdir = os.curdir
+    if '__file__' in globals():
+        curdir = os.path.dirname(os.path.abspath(__file__))
+
+
+    onecplatfrorm_config = get_config_param("onecplatfrorm")
+    if not onecplatfrorm_config is None:
+        return onecplatfrorm_config        
     
     if platform.system() == "Darwin":
         raise Exception("MacOS not run 1C")
@@ -128,8 +149,12 @@ def decompile():
             continue
     if len(dataprocessor_files) == 0:
         exit(exit_code)
+    
+    source_dir = get_config_param("source")
+    if source_dir is None:
+        source_dir = "src"
 
-    dirsource = os.path.abspath(os.path.join(os.path.curdir, "plugins-source"))
+    dirsource = os.path.abspath(os.path.join(os.path.curdir, source_dir))
     curabsdirpath = os.path.abspath(os.path.curdir)
     #pathbin1c = "C:\\Program Files\\1cv82\8.2.17.153\\bin\\1cv8.exe"
     #pathbin1c = "c:\\Program Files (x86)\\1cv8\\8.3.4.304\\bin\\1cv8.exe"
