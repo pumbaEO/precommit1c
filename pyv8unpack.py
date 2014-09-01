@@ -194,16 +194,20 @@ def decompile(list_of_files, source=None, platform=None):
         logging.debug("formatstring is %s , base is %s, V8Reader is %s, temp \
             is %s" % (formatstring, base, V8Reader, tempbat))
 
-
         with open(tempbat, 'w', encoding='cp866') as temp:
             temp.write('@echo off\n')
-            temp.write(format('"%s" %s /DisableStartupMessages %s %s'%(pathbin1c, base, V8Reader, formatstring)))
+            temp.write(format('"%s" %s /DisableStartupMessages %s %s' % (pathbin1c,
+                            base, V8Reader, formatstring))
+                       )
             temp.close()
             result = subprocess.check_call(['cmd.exe', '/C', tempbat])
+            assert result == 0, format("Не удалось разобрать\
+                                обработку %s" % (fullpathfile))
             if not result == 0:
                 logging.error(format("Не удалось разобрать \
                     обработку %s" % (fullpathfile)))
-                raise format("Не удалось разобрать обработку %s" %(fullpathfile))
+                raise format("Не удалось разобрать\
+                                обработку %s" % (fullpathfile))
             returnlist.append(newsourcepath)
             logging.info("Разобран в %s" % (newsourcepath))
 
@@ -219,10 +223,10 @@ def add_to_git(pathlists):
 
 def compile(input, output, ext):
     import codecs
-    if input is None:
-        raise "Не указан путь к входящему каталогу"
-    if output is None:
-        raise "Не указан путь к исходящему файлу"
+
+    assert not input is None, "Не указан путь к входящему каталогу"
+    assert not output is None, "Не указан путь к исходящему файлу"
+
     extfile = "epf" if ext == "auto" else ext
 
     dirsource = os.path.abspath(os.path.join(os.path.curdir, input))
@@ -238,21 +242,27 @@ def compile(input, output, ext):
         lines = r.read()
         lines = lines.split('\r\n')
         for l in lines:
+            if l.startswith(u'\ufeff'):
+                l = l[1:]
             list = l.split("-->")
             if len(list) < 2:
                 continue
-            log.error(l)
+            log.debug(l)
             newPath = os.path.join(tempPath, list[0])
             dirname = os.path.dirname(newPath)
             if not os.path.exists(dirname):
                 os.mkdir(dirname)
-            oldPath = os.path.join(dirsource, list[1].replace("\\", os.path.sep))
+            oldPath = os.path.join(dirsource,
+                                   list[1].replace(
+                                   "\\", os.path.sep)
+                                   )
+
             if os.path.isdir(oldPath):
                 #tempFile = tempfile.mkstemp()
                 newPath = os.path.join(tempPath, list[0])
                 shutil.copytree(oldPath, newPath)
             else:
-                log.error(oldPath)
+                log.debug(oldPath)
                 shutil.copy(
                     os.path.normpath(oldPath),
                     newPath
@@ -260,10 +270,19 @@ def compile(input, output, ext):
 
         #вызовем v8unpack, для сборки файла из исходников.
         tempFile = tempfile.mktemp("."+extfile)
-        log.debug(["UnpackV8.exe", "-PACK", '{}{}'.format(tempPath, os.path.sep), tempFile])
-        log.error('UnpackV8.exe -B "{}" "{}"'.format('{}{}'.format(tempPath, os.path.sep), tempFile))
-        result = subprocess.check_call(['UnpackV8.exe', '-PACK', '{}{}'.format(tempPath, os.path.sep), tempFile])
+        log.debug('unpackv8 -B "{}" "{}"'.format('{}'.format(tempPath), tempFile))
+        result = subprocess.check_call(
+            ['unpackv8',
+             '-B',
+             '{}'.format(tempPath),
+             tempFile]
+        )
+
+        log.debug("copy from {} to {}".format(tempFile, output))
+        assert result == 0, "Не удалось упаковать каталог {}".format(tempPath)
         shutil.move(tempFile, output)
+
+        return output
 
 def main():
 
