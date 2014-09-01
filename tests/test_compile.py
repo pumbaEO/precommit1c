@@ -13,7 +13,7 @@ class TestV8Unpack(unittest.TestCase):
         assert pyv8unpack.decompile([file], tpath)
         tpath = path.join(tpath, "tests", "Fixture")
         filenew = tempfile.mktemp()
-        assert pyv8unpack.compile(tpath, filenew, "epf") == filenew
+        assert pyv8unpack.compilefromsource(tpath, filenew, "epf") == filenew
 
     def test_decompile(self):
 

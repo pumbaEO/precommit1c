@@ -4,14 +4,14 @@ import os
 import sys
 import subprocess
 import shutil
-from os.path import exists
 import logging
 import tempfile
 import re
 import platform
 import argparse
+from subprocess import PIPE
 
-__version__ = "0.0.2"
+__version__ = "0.0.3"
 
 logging.basicConfig(level=logging.INFO) # DEBUG => print ALL msgs
 log = logging.getLogger("pyv8unpack")
@@ -34,7 +34,7 @@ def get_config_param(param):
         try:
             with open(os.path.join(loc, "precommit1c.ini")) as source:
                 if sys.version_info<(3,0,0):
-                    from ConfigParser import ConfigParser
+                    from ConfigParser import ConfigParser  # @NoMove @UnusedImport
                 else:
                     from configparser import ConfigParser
 
@@ -94,7 +94,7 @@ def get_path_to_1c():
             #FIXME: проверить архетиктуру.
             program_files = os.getenv("PROGRAMFILES")
             if program_files is None:
-                raise Exeption("path to Program files not found");
+                raise "path to Program files not found";
         cmd = os.path.join(program_files, "1cv8")
         maxversion =  max(list(filter((lambda x: '8.' in x), os.listdir(cmd))))
         if maxversion is None:
@@ -165,8 +165,7 @@ def decompile(list_of_files, source=None, platform=None):
 
     for filename in dataprocessor_files:
         logging.info("file %s" % filename)
-        #TODO: добавить копирование этих же файлов в каталог src/имяфайла/...
-        #get file name.
+
         fullpathfile = os.path.abspath(filename)
         basename = os.path.splitext(os.path.basename(filename))[0]
         fullbasename = os.path.basename(filename)
@@ -221,7 +220,7 @@ def add_to_git(pathlists):
             logging.error(result)
             exit(result)
 
-def compile(input, output, ext):
+def compilefromsource(input, output, ext):
     import codecs
 
     assert not input is None, "Не указан путь к входящему каталогу"
@@ -244,22 +243,22 @@ def compile(input, output, ext):
         for l in lines:
             if l.startswith(u'\ufeff'):
                 l = l[1:]
-            list = l.split("-->")
-            if len(list) < 2:
+            listline = l.split("-->") 
+            if len(listline) < 2:
                 continue
             log.debug(l)
-            newPath = os.path.join(tempPath, list[0])
+            newPath = os.path.join(tempPath, listline[0])
             dirname = os.path.dirname(newPath)
             if not os.path.exists(dirname):
                 os.mkdir(dirname)
             oldPath = os.path.join(dirsource,
-                                   list[1].replace(
+                                   listline[1].replace(
                                    "\\", os.path.sep)
                                    )
 
             if os.path.isdir(oldPath):
                 #tempFile = tempfile.mkstemp()
-                newPath = os.path.join(tempPath, list[0])
+                newPath = os.path.join(tempPath, listline[0])
                 shutil.copytree(oldPath, newPath)
             else:
                 log.debug(oldPath)
@@ -320,7 +319,7 @@ def main():
             add_to_git(indexes)
 
     if(args.compile):
-        compile(args.inputPath, args.output, args.type)
+        compilefromsource(args.inputPath, args.output, args.type)
     if args.inputPath is not None:
         files = [os.path.abspath(
             os.path.join(os.path.curdir, args.inputPath))]
