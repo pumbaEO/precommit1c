@@ -1,6 +1,7 @@
 import unittest
 import pyv8unpack
 from os import path as path
+import os
 import tempfile
 import shutil
 
@@ -12,11 +13,21 @@ class TestV8Unpack(unittest.TestCase):
         self.tpath = tempfile.mkdtemp()
         self.tfile = tempfile.mktemp()
         
+        pathIb = path.join(path.curdir, ".git", "hooks", "ibService")
+        if (path.exists(pathIb)):
+        	shutil.rmtree(pathIb)
+        shutil.copytree(path.join(path.curdir, "ibService"),
+        	pathIb)
+        shutil.copy(path.join(path.curdir, "V8Reader.epf"),
+        	path.join(path.curdir, ".git", "hooks", "V8Reader.epf"))
+        
     def tearDown(self):
         import os
         if os.path.exists(self.tfile):
             os.remove(self.tfile)
         shutil.rmtree(self.tpath)
+        shutil.rmtree(path.join(path.curdir, ".git", "hooks", "ibService"))
+        os.remove(path.join(path.curdir, ".git", "hooks", "V8Reader.epf"))
 
 
     def test_compile_from_source(self):
