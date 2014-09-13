@@ -9,6 +9,7 @@ import shutil
 class TestV8Unpack(unittest.TestCase):
     
     def setUp(self):
+
         unittest.TestCase.setUp(self)
         self.tpath = tempfile.mkdtemp()
         self.tfile = tempfile.mktemp()
@@ -22,7 +23,7 @@ class TestV8Unpack(unittest.TestCase):
         	path.join(path.curdir, ".git", "hooks", "V8Reader.epf"))
         
     def tearDown(self):
-        import os
+
         if os.path.exists(self.tfile):
             os.remove(self.tfile)
         shutil.rmtree(self.tpath)
