@@ -4,6 +4,7 @@ from os import path as path
 import os
 import tempfile
 import shutil
+from pathlib import Path
 
 
 class TestV8Unpack(unittest.TestCase):
@@ -46,3 +47,9 @@ class TestV8Unpack(unittest.TestCase):
         self.tpath = tempfile.mkdtemp()
         file = path.join(path.curdir, "tests", "Fixture.epf")
         assert pyv8unpack.decompile([file], self.tpath)
+        
+    def test_decompile_checkfullpath(self):
+        
+        self.tpath = tempfile.mkdtemp()
+        file = path.join(path.curdir, "tests", "Fixture.epf")
+        assert pyv8unpack.decompile([file], self.tpath);

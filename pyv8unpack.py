@@ -64,18 +64,17 @@ def get_path_to_1c():
     cmd = os.getenv("PATH1C")
     if not cmd is None:
         cmd = os.path.join(cmd, "1cv8")
-        maxversion =  max(list(filter((lambda x: '8.' in x), os.listdir(cmd))))
+        maxversion = max(list(filter((lambda x: '8.' in x), os.listdir(cmd))))
         if maxversion is None:
             raise Exception("not found verion dirs")
-        cmd = os.path.join(cmd, maxversion + os.path.sep + "bin"+os.path.sep+"1cv8.exe")
+        cmd = os.path.join(cmd, maxversion+os.path.sep+"bin"+os.path.sep+"1cv8.exe")
 
         if not os.path.isfile(cmd):
-            raise Exception("file not found %s" %(cmd))
+            raise Exception("file not found %s" % (cmd))
 
         return cmd
 
     #read config
-
 
     curdir = os.curdir
     if '__file__' in globals():
@@ -96,13 +95,13 @@ def get_path_to_1c():
             if program_files is None:
                 raise "path to Program files not found";
         cmd = os.path.join(program_files, "1cv8")
-        maxversion =  max(list(filter((lambda x: '8.' in x), os.listdir(cmd))))
+        maxversion = max(list(filter((lambda x: '8.' in x), os.listdir(cmd))))
         if maxversion is None:
             raise Exception("not found verion dirs")
         cmd = os.path.join(cmd, maxversion + os.path.sep + "bin"+os.path.sep+"1cv8.exe")
 
         if not os.path.isfile(cmd):
-            raise Exception("file not found %s" %(cmd))
+            raise Exception("file not found %s" % (cmd))
 
     else:
         cmd = subprocess.Popen(["which", "1cv8"], stdout=PIPE).communicate()[0].strip()
@@ -175,12 +174,15 @@ def decompile(list_of_files, source=None, platform=None):
         if not os.path.exists(dirsource):
             os.makedirs(dirsource)
         #для каждого файла определим новую папку.
+        logging.debug("{} {} {}".format(dirsource, newdirname, basename))
         newsourcepath = os.path.join(dirsource, newdirname, basename)
         if(os.path.isabs(newdirname)):
             newsourcepath = os.path.join(dirsource, basename)
         if not os.path.exists(newsourcepath):
             logging.debug("create new dir %s" % newsourcepath)
             os.makedirs(newsourcepath)
+        else:
+            shutil.rmtree(newsourcepath, ignore_errors=True)
 
         logging.debug("file to copy %s, new path %s, new file %s"
             % (filename, newsourcepath, os.path.join(newsourcepath, fullbasename))
@@ -323,6 +325,19 @@ def main():
     if args.inputPath is not None:
         files = [os.path.abspath(
             os.path.join(os.path.curdir, args.inputPath))]
+        if os.path.isdir(files[0]):
+            rootDir = os.path.abspath(
+                        os.path.join(os.path.curdir, args.inputPath));
+            files=[]
+            for dirName, subdirList, fileList in os.walk(rootDir):
+                absdir = dirName[len(rootDir)+1:]
+                if '.git' in subdirList:
+                    subdirList.remove('.git')
+                if 'src' in subdirList:
+                    subdirList.remove('src')
+                for fname in fileList:
+                    files.append(os.path.join(absdir,fname))
+                
         decompile(
             files, args.output, args.platform)
 
