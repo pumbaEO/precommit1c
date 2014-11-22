@@ -118,8 +118,11 @@ def get_list_of_comitted_files():
         output = subprocess.check_output(['git','diff-index', '--name-status', '--cached','HEAD']
             ).decode("utf-8")
     except subprocess.CalledProcessError:
-        print("Error diff files get: trace %s" % subprocess.CalledProcessError.output)
-        return files
+        try:
+            output = subprocess.check_output(['git', 'status', '--porcelain']).decode("utf-8")
+        except subprocess.CalledProcessError:
+            print("Error diff files get")
+            return files
 
     for result in output.split("\n"):
         logging.info(result)
@@ -190,7 +193,7 @@ def decompile(list_of_files, source=None, platform=None):
 
         formatstring = format('/C"decompile;pathtocf;%s;pathout;%s;ЗавершитьРаботуПосле;"' % (fullpathfile, newsourcepath))
         base = '/F"'+os.path.join(curabsdirpath,".git", "hooks","ibService")+'"'
-        V8Reader = '/execute"'+os.path.join(curabsdirpath,".git", "hooks", "V8Reader.epf")+'"'
+        V8Reader = '/execute"'+os.path.join(curabsdirpath,".git", "hooks", "v8Reader", "V8Reader.epf")+'"'
         tempbat = tempfile.mktemp(".bat")
         logging.debug("formatstring is %s , base is %s, V8Reader is %s, temp \
             is %s" % (formatstring, base, V8Reader, tempbat))
