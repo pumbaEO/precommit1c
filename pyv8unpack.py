@@ -160,6 +160,16 @@ def decompile(list_of_files, source=None, platform=None):
     if source_dir is None:
         source_dir = "src"
 
+    #получаем флажок того, что исходники располагаются в подпапке источника
+    source_in_source = get_config_param("source_in_source")
+    if source_in_source is None:
+        source_in_source = False
+    else:
+        if source_in_source == "True":
+            source_in_source = True
+        else:
+            source_in_source = False
+            
     dirsource = os.path.abspath(os.path.join(os.path.curdir, source_dir))
     curabsdirpath = os.path.abspath(os.path.curdir)
     pathbin1c = platform or get_path_to_1c()
@@ -167,18 +177,28 @@ def decompile(list_of_files, source=None, platform=None):
 
     for filename in dataprocessor_files:
         logging.info("file %s" % filename)
-
+ 
         fullpathfile = os.path.abspath(filename)
         basename = os.path.splitext(os.path.basename(filename))[0]
         fullbasename = os.path.basename(filename)
         newdirname = os.path.dirname(filename)
 
+        #если исходники в подпаке источника, меняем путь
+        if source_in_source:
+          dirsource = os.path.abspath(os.path.join(os.path.curdir, newdirname, source_dir))
+
+
         #Скопируем сначало просто структуру каталогов.
         if not os.path.exists(dirsource):
             os.makedirs(dirsource)
         #для каждого файла определим новую папку.
-        logging.debug("{} {} {}".format(dirsource, newdirname, basename))
-        newsourcepath = os.path.join(dirsource, newdirname, basename)
+        if source_in_source:
+          logging.debug("{} {}".format(dirsource, basename))
+          newsourcepath = os.path.join(dirsource, basename)
+        else:  
+          logging.debug("{} {} {}".format(dirsource, newdirname, basename))
+          newsourcepath = os.path.join(dirsource, newdirname, basename)
+          
         if(os.path.isabs(newdirname)):
             newsourcepath = os.path.join(dirsource, basename)
         if not os.path.exists(newsourcepath):
