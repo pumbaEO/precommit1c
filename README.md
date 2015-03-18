@@ -46,7 +46,7 @@ source_in_source = False
 .git\
     hooks\
         pre-commit
-        V8Reader.epf
+        V8Reader
         ibService 
         pyv8unpack.py
 ```
