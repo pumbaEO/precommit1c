@@ -1,3 +1,3 @@
-[DEFAULT]
-onecplatfrorms = D:\environ\onec\1cv8\8.3.4.465\bin\1cv8.exe
-source = plugin_source
+[default]
+onec_platform=D:\environ\onec\1cv8\8.3.4.465\bin\1cv8.exe
+source=plugin_source

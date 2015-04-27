@@ -20,7 +20,7 @@ modified = re.compile('^(?:M|A)(\s+)(?P<name>.*)')
 
 def get_config_param(param):
     """
-    Parse config file and find in them source dir
+    Parse config file and find source dir in it
     """
     curdir = os.curdir
     if '__file__' in globals():
@@ -41,8 +41,8 @@ def get_config_param(param):
         except IOError:
             pass
 
-    if config is not None and config.has_option('DEFAULT', param):
-        value = config.get('DEFAULT', param)
+    if config is not None and config.has_option('default', param):
+        value = config.get('default', param)
         return value
 
     return None
@@ -52,19 +52,19 @@ def get_path_to_1c():
     """
     Get path to 1c binary.
     First env, 'PATH1C'
-    Second env 'PROGRAMFILES' on windows
-    Third /opt/1c - only linux
+    Second env 'PROGRAMFILES' (only Windows)
+    Third '/opt/1c' (only Linux)
     """
     cmd = os.getenv('PATH1C')
     if cmd is not None:
         cmd = os.path.join(cmd, '1cv8')
         maxversion = max(list(filter((lambda x: '8.' in x), os.listdir(cmd))))
         if maxversion is None:
-            raise Exception('Not found verion dirs')
+            raise Exception('Not found version dirs')
         cmd = os.path.join(cmd, maxversion + os.path.sep + 'bin' + os.path.sep + '1cv8.exe')
 
         if not os.path.isfile(cmd):
-            raise Exception('File not found %s' % cmd)
+            raise Exception('File not found {}'.format(cmd))
 
         return cmd
 
@@ -73,27 +73,27 @@ def get_path_to_1c():
     if '__file__' in globals():
         curdir = os.path.dirname(os.path.abspath(__file__))
 
-    onecplatfrorm_config = get_config_param('onecplatfrorm')
-    if onecplatfrorm_config is not None:
-        return onecplatfrorm_config
+    onec_platform_config = get_config_param('onec_platform')
+    if onec_platform_config is not None:
+        return onec_platform_config
 
     if platform.system() == 'Darwin':
         raise Exception('MacOS not run 1C')
     elif platform.system() == 'Windows':
         program_files = os.getenv('PROGRAMFILES(X86)')
         if program_files is None:
-            # FIXME: проверить архитектуру
+            # fixme Проверить архитектуру
             program_files = os.getenv('PROGRAMFILES')
             if program_files is None:
-                raise Exception('Path to Program files not found')
+                raise Exception('Path to "Program files" not found')
         cmd = os.path.join(program_files, '1cv8')
         maxversion = max(list(filter((lambda x: '8.' in x), os.listdir(cmd))))
         if maxversion is None:
-            raise Exception('Not found verion dirs')
+            raise Exception('Not found version dirs')
         cmd = os.path.join(cmd, maxversion + os.path.sep + 'bin' + os.path.sep + '1cv8.exe')
 
         if not os.path.isfile(cmd):
-            raise Exception('file not found %s' % cmd)
+            raise Exception('File not found {}'.format(cmd))
 
     else:
         cmd = subprocess.Popen(['which', '1cv8'], stdout=subprocess.PIPE).communicate()[0].strip()
@@ -103,7 +103,7 @@ def get_path_to_1c():
 
 def get_list_of_comitted_files():
     """
-    Return a list of files abouts to be decompile
+    Return the list of files to be decompiled
     """
     files = []
     output = []
@@ -140,10 +140,10 @@ def decompile(list_of_files, source=None, platform_=None):
     # Find datapocessor files
     for filename in list_of_files:
         # Check the file extensions
-        logging.debug('File to check %s' % filename)
+        logging.debug('File to check {}'.format(filename))
         if filename[-3:] in ['epf', 'erf']:
             dataprocessor_files.append(filename)
-            logging.debug('File %s' % filename)
+            logging.debug('File {}'.format(filename))
             continue
     if len(dataprocessor_files) == 0:
         exit(exit_code)
@@ -168,7 +168,7 @@ def decompile(list_of_files, source=None, platform_=None):
     returnlist = []
 
     for filename in dataprocessor_files:
-        logging.info('File %s' % filename)
+        logging.info('File {}'.format(filename))
 
         fullpathfile = os.path.abspath(filename)
         basename = os.path.splitext(os.path.basename(filename))[0]
@@ -193,33 +193,33 @@ def decompile(list_of_files, source=None, platform_=None):
         if os.path.isabs(newdirname):
             newsourcepath = os.path.join(dirsource, basename)
         if not os.path.exists(newsourcepath):
-            logging.debug('create new dir %s' % newsourcepath)
+            logging.debug('create new dir {}'.format(newsourcepath))
             os.makedirs(newsourcepath)
         else:
             shutil.rmtree(newsourcepath, ignore_errors=True)
 
-        logging.debug('file to copy %s, new path %s, new file %s' % (filename, newsourcepath,
+        logging.debug('File to copy {}, new path {}, new file {}'.format(filename, newsourcepath,
                                                                      os.path.join(newsourcepath, fullbasename)))
 
-        formatstring = format('/C"decompile;pathtocf;%s;pathout;%s;ЗавершитьРаботуПосле;"' %
-                              (fullpathfile, newsourcepath))
+        formatstring = format('/C"decompile;pathtocf;{};pathout;{};ЗавершитьРаботуПосле;"'.format(fullpathfile,
+                                                                                                  newsourcepath))
         base = '/F"' + os.path.join(curabsdirpath, '.git', 'hooks', 'ibService') + '"'
         v8_reader = '/execute"' + os.path.join(curabsdirpath, '.git', 'hooks', 'v8Reader', 'V8Reader.epf') + '"'
         tempbat = tempfile.mktemp('.bat')
-        logging.debug('formatstring is %s , base is %s, V8Reader is %s, temp is %s' % (formatstring, base, v8_reader,
-                                                                                       tempbat))
+        logging.debug('Formatstring is {} , base is {}, V8Reader is {}, temp is {}'.format(formatstring,
+                                                                                           base, v8_reader, tempbat))
 
         with open(tempbat, 'w', encoding='cp866') as temp:
             temp.write('@echo off\n')
-            temp.write(format('"%s" %s /DisableStartupMessages %s %s' % (pathbin1c, base, v8_reader, formatstring)))
+            temp.write(format('"{}" {} /DisableStartupMessages {} {}'.format(pathbin1c, base, v8_reader, formatstring)))
             temp.close()
             result = subprocess.check_call(['cmd.exe', '/C', tempbat])
-            assert result == 0, format('Не удалось разобрать обработку %s' % fullpathfile)
+            assert result == 0, format('Не удалось разобрать обработку {}'.format(fullpathfile))
             if not result == 0:
-                logging.error(format('Не удалось разобрать обработку %s' % fullpathfile))
-                raise format('Не удалось разобрать обработку %s' % fullpathfile)
+                logging.error(format('Не удалось разобрать обработку {}'.format(fullpathfile)))
+                raise format('Не удалось разобрать обработку {}'.format(fullpathfile))
             returnlist.append(newsourcepath)
-            logging.info('Разобран в %s' % newsourcepath)
+            logging.info('Разобран в {}'.format(newsourcepath))
 
     return returnlist
 
