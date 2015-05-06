@@ -231,6 +231,28 @@ def add_to_git(pathlists):
             logging.error(result)
             exit(result)
 
+def findexecute(name):
+    found = []
+    ext = ''
+    searchpath = os.environ.get("PATH", "").split(os.pathsep)
+    if sys.platform.startswith("win"):
+        ext = '.exe'
+        searchpath.insert(0, os.curdir)  # implied by Windows shell
+    
+    for i in range(len(searchpath)):
+        dirName = searchpath[i]
+        # On windows the dirName *could* be quoted, drop the quotes
+        if sys.platform.startswith("win") and len(dirName) >= 2\
+           and dirName[0] == '"' and dirName[-1] == '"':
+            dirName = dirName[1:-1]
+        absName = os.path.abspath(
+            os.path.normpath(os.path.join(dirName, name+ext)))
+        if os.path.isfile(absName) and not absName in found:
+            found.append(absName)
+    
+    firstpath = ""
+    if len(found) > 0: firstpath = found[0]
+    return firstpath
 
 def compilefromsource(input_, output, ext):
     import codecs
@@ -274,9 +296,12 @@ def compilefromsource(input_, output, ext):
 
         # Вызовем v8unpack для сборки файла из исходников
         temp_file = tempfile.mktemp('.' + extfile)
-        log.debug('unpackv8 -B "{}" "{}"'.format('{}'.format(temp_path), temp_file))
+        unpackpath = findexecute("unpackv8")
+        assert (len(unpackpath) > 0), "path to unpackv8 is empty"
+        log.debug('{} -B "{}" "{}"'.format(unpackpath, '{}'.format(temp_path), temp_file))
+        print('{} -B "{}" "{}"'.format(unpackpath, '{}'.format(temp_path), temp_file))
         result = subprocess.check_call([
-            'unpackv8',
+            unpackpath,
             '-B',
             '{}'.format(temp_path),  # fixme
             temp_file
