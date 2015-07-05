@@ -96,10 +96,28 @@ def get_path_to_1c():
             raise Exception('File not found {}'.format(cmd))
 
     else:
+        for p in "/opt/1C/v8.3/x86_64", "/opt/1C/v8.3/i386":
+            if os.path.exists(os.path.join(p, '1cv8')):
+                return os.path.join(p, '1cv8')
         cmd = subprocess.Popen(['which', '1cv8'], stdout=subprocess.PIPE).communicate()[0].strip()
 
     return cmd
 
+def get_service_path(suffix):
+    curdir = os.curdir
+    if '__file__' in globals():
+        curdir = os.path.dirname(os.path.abspath(__file__))
+
+    hookpath = os.path.join(os.curdir, '.git', 'hooks')
+    for loc in curdir, os.curdir, hookpath:
+        found = os.path.join(loc, suffix)
+        if os.path.exists(found):
+            log.debug("suffix {} - service path {}".format(suffix, found))
+            return found
+        
+    return None
+    
+    
 
 def get_list_of_comitted_files():
     """
@@ -117,7 +135,7 @@ def get_list_of_comitted_files():
             return files
 
     for result in output.split('\n'):
-        logging.info(result)
+        log.info(result)
         if result != '':
             match = modified.match(result)
             if match:
@@ -140,10 +158,10 @@ def decompile(list_of_files, source=None, platform_=None):
     # Find datapocessor files
     for filename in list_of_files:
         # Check the file extensions
-        logging.debug('File to check {}'.format(filename))
+        log.debug('File to check {}'.format(filename))
         if filename[-3:] in ['epf', 'erf']:
             dataprocessor_files.append(filename)
-            logging.debug('File {}'.format(filename))
+            log.debug('File {}'.format(filename))
             continue
     if len(dataprocessor_files) == 0:
         exit(exit_code)
@@ -165,10 +183,13 @@ def decompile(list_of_files, source=None, platform_=None):
     dirsource = os.path.abspath(os.path.join(os.path.curdir, source_dir))
     curabsdirpath = os.path.abspath(os.path.curdir)
     pathbin1c = platform_ or get_path_to_1c()
+    pathibService = get_service_path('ibService')
+    pathv8reader = get_service_path(os.path.join('v8Reader', 'V8Reader.epf'))
     returnlist = []
+    
 
     for filename in dataprocessor_files:
-        logging.info('File {}'.format(filename))
+        log.info('File {}'.format(filename))
 
         fullpathfile = os.path.abspath(filename)
         basename = os.path.splitext(os.path.basename(filename))[0]
@@ -184,29 +205,29 @@ def decompile(list_of_files, source=None, platform_=None):
             os.makedirs(dirsource)
         # Для каждого файла определим новую папку
         if source_in_source:
-            logging.debug('{} {}'.format(dirsource, basename))
+            log.debug('{} {}'.format(dirsource, basename))
             newsourcepath = os.path.join(dirsource, basename)
         else:
-            logging.debug('{} {} {}'.format(dirsource, newdirname, basename))
+            log.debug('{} {} {}'.format(dirsource, newdirname, basename))
             newsourcepath = os.path.join(dirsource, newdirname, basename)
 
         if os.path.isabs(newdirname):
             newsourcepath = os.path.join(dirsource, basename)
         if not os.path.exists(newsourcepath):
-            logging.debug('create new dir {}'.format(newsourcepath))
+            log.debug('create new dir {}'.format(newsourcepath))
             os.makedirs(newsourcepath)
         else:
             shutil.rmtree(newsourcepath, ignore_errors=True)
 
-        logging.debug('File to copy {}, new path {}, new file {}'.format(filename, newsourcepath,
+        log.debug('File to copy {}, new path {}, new file {}'.format(filename, newsourcepath,
                                                                      os.path.join(newsourcepath, fullbasename)))
 
         formatstring = format('/C"decompile;pathtocf;{};pathout;{};ЗавершитьРаботуПосле;"'.format(fullpathfile,
                                                                                                   newsourcepath))
-        base = '/F"' + os.path.join(curabsdirpath, '.git', 'hooks', 'ibService') + '"'
-        v8_reader = '/execute"' + os.path.join(curabsdirpath, '.git', 'hooks', 'v8Reader', 'V8Reader.epf') + '"'
+        base = '/F"' + pathibService + '"'
+        v8_reader = '/execute"' + pathv8reader + '"'
         tempbat = tempfile.mktemp('.bat')
-        logging.debug('Formatstring is {} , base is {}, V8Reader is {}, temp is {}'.format(formatstring,
+        log.debug('Formatstring is {} , base is {}, V8Reader is {}, temp is {}'.format(formatstring,
                                                                                            base, v8_reader, tempbat))
 
         with open(tempbat, 'w', encoding='cp866') as temp:
@@ -216,10 +237,10 @@ def decompile(list_of_files, source=None, platform_=None):
             result = subprocess.check_call(['cmd.exe', '/C', tempbat])
             assert result == 0, format('Не удалось разобрать обработку {}'.format(fullpathfile))
             if not result == 0:
-                logging.error(format('Не удалось разобрать обработку {}'.format(fullpathfile)))
+                log.error(format('Не удалось разобрать обработку {}'.format(fullpathfile)))
                 raise format('Не удалось разобрать обработку {}'.format(fullpathfile))
             returnlist.append(newsourcepath)
-            logging.info('Разобран в {}'.format(newsourcepath))
+            log.info('Разобран в {}'.format(newsourcepath))
 
     return returnlist
 
@@ -228,7 +249,7 @@ def add_to_git(pathlists):
     for l in pathlists:
         result = subprocess.check_call(['git', 'add', '--all', l])
         if not result == 0:
-            logging.error(result)
+            log.error(result)
             exit(result)
 
 def findexecute(name):

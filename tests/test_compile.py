@@ -15,21 +15,10 @@ class TestV8Unpack(unittest.TestCase):
         self.tpath = tempfile.mkdtemp()
         self.tfile = tempfile.mktemp()
 
-        path_ib = path.join(path.curdir, '.git', 'hooks', 'ibService')
-        if path.exists(path_ib):
-            shutil.rmtree(path_ib)
-        shutil.copytree(path.join(path.curdir, 'ibService'), path_ib)
-        os.mkdir(path.join(path.curdir, '.git', 'hooks', 'v8Reader'))
-        shutil.copy(path.join(path.curdir, 'v8Reader', 'V8Reader.epf'), path.join(path.curdir, '.git', 'hooks',
-                                                                                  'v8Reader', 'V8Reader.epf'))
-
     def tearDown(self):
         if os.path.exists(self.tfile):
             os.remove(self.tfile)
         shutil.rmtree(self.tpath)
-        shutil.rmtree(path.join(path.curdir, '.git', 'hooks', 'ibService'))
-        os.remove(path.join(path.curdir, '.git', 'hooks', 'v8Reader', 'V8Reader.epf'))
-        shutil.rmtree(path.join(path.curdir, '.git', 'hooks', 'v8Reader'))
 
     def test_compile_from_source(self):
         self.tpath = tempfile.mkdtemp()
