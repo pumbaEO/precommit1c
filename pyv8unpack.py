@@ -317,8 +317,10 @@ def compilefromsource(input_, output, ext):
 
         # Вызовем v8unpack для сборки файла из исходников
         temp_file = tempfile.mktemp('.' + extfile)
-        unpackpath = findexecute("unpackv8")
-        assert (len(unpackpath) > 0), "path to unpackv8 is empty"
+        unpackpath = findexecute("v8unpack")
+        if len(unpackpath) == 0:
+            unpackpath = findexecute("unpackv8")
+        assert (len(unpackpath) > 0), "path to v8unpack is empty"
         log.debug('{} -B "{}" "{}"'.format(unpackpath, '{}'.format(temp_path), temp_file))
         print('{} -B "{}" "{}"'.format(unpackpath, '{}'.format(temp_path), temp_file))
         result = subprocess.check_call([
