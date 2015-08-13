@@ -38,6 +38,13 @@ class TestV8Unpack(unittest.TestCase):
         file = path.join(path.curdir, 'tests', 'Fixture.epf')
         assert pyv8unpack.decompile([file], self.tpath)
 
+    def test_decompile_checkconvertmxl2txt(self):
+        self.tpath = tempfile.mkdtemp()
+        file = path.join(path.curdir, 'tests', 'Fixture.epf')
+        assert pyv8unpack.decompile([file], self.tpath)
+        tpath = path.join(self.tpath, 'tests', 'Fixture', 'Макеты', "ТабличныйДокумент_mxl.txt")
+        self.assertTrue(path.exists(tpath), 'Файл не существует {}'.format(tpath))
+
 
 class TestGitInit(unittest.TestCase):
     def setUp(self):

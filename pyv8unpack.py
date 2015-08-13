@@ -222,7 +222,7 @@ def decompile(list_of_files, source=None, platform_=None):
         log.debug('File to copy {}, new path {}, new file {}'.format(filename, newsourcepath,
                                                                      os.path.join(newsourcepath, fullbasename)))
 
-        formatstring = format('/C"decompile;pathtocf;{};pathout;{};ЗавершитьРаботуПосле;"'.format(fullpathfile,
+        formatstring = format('/C"decompile;pathtocf;{};pathout;{};shutdown;convert-mxl2txt;"'.format(fullpathfile,
                                                                                                   newsourcepath))
         base = '/F"' + pathibService + '"'
         v8_reader = '/execute"' + pathv8reader + '"'
