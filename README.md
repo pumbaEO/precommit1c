@@ -65,17 +65,17 @@ python pyv8unpack.py [-h] [--version] [-v] [--index] [--g] [--compile]
 Утилита для автоматической распаковки внешних обработок
 
 positional arguments:
-  inputPath            Путь к файлам необходимым для распаковки
+  inputPath            Путь к файлам, необходимым для распаковки
   output               Путь к каталогу, куда распаковывать
 
 optional arguments:
-  -h, --help           show this help message and exit
-  --version            show program's version number and exit
-  -v, --verbose        increases log verbosity for each occurence.
+  -h, --help           Show this help message and exit
+  --version            Show program's version number and exit
+  -v, --verbose        Increases log verbosity for each occurence
   --index              Добавляем в индекс исходники
-  --g                  Запуситить чтение индекса из git и определить список
+  --g                  Запустить чтение индекса из git и определить список
                        файлов для разбора
-  --compile            Собрать внешний файл/обработку
+  --compile            Собрать внешний отчёт/обработку
   --type TYPE          Тип файла для сборки epf, erf. По умолчанию авто epf
   --platform PLATFORM  Путь к платформе 1С
 ```
