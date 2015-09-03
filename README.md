@@ -80,31 +80,6 @@ optional arguments:
   --platform PLATFORM  Путь к платформе 1С
 ```
 
-##Командная строка запуска
-
-```
-python pyv8unpack.py [-h] [--version] [-v] [--index] [--g] [--compile]
-                     [--type TYPE] [--platform PLATFORM]
-                     [inputPath] [output]
-
-Утилита для автоматической распаковки внешних обработок
-
-positional arguments:
-  inputPath            Путь к файлам необходимым для распаковки
-  output               Путь к каталогу, куда распаковывать
-
-optional arguments:
-  -h, --help           show this help message and exit
-  --version            show program's version number and exit
-  -v, --verbose        increases log verbosity for each occurence.
-  --index              Добавляем в индекс исходники
-  --g                  Запуситить чтение индекса из git и определить список
-                       файлов для разбора
-  --compile            Собрать внешний файл/обработку
-  --type TYPE          Тип файла для сборки epf, erf. По умолчанию авто epf
-  --platform PLATFORM  Путь к платформе 1С
-```
-
 ##Ограничения
 
 Не стоит называть файлы с разным расширением epf и erf одинаковыми именами - каталоги с исходниками создаются только по наименованию без учёта расширения и возможен конфликт имен. 
