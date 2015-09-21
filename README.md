@@ -61,7 +61,7 @@ source_in_source = False
 ##Командная строка запуска OneScript (рекомендуется для разборки файлов)
 
 ```
-oscript v8files-extractor.os [--help | ]
+oscript v8files-extractor.os ?
 
 Утилита сборки/разборки внешних файлов 1С
 
