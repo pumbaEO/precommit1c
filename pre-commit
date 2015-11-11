@@ -1,4 +1,4 @@
 #!/bin/sh
 echo "Start hooks before commit for v8unpack erf and epf"
 #python.exe .git/hooks/pyv8unpack.py --g --index
-oscript -encoding=utf-8 .git/hooks/v8files-extractor.os --git-precommit .
+oscript -encoding=utf-8 .git/hooks/v8files-extractor.os --git-precommit src
