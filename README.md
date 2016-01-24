@@ -1,5 +1,7 @@
 ﻿## Набор утилит для автоматической разборки/сборки внешних обработок и отчетов, при помещении (commit) в git
 
+[![Join the chat at https://gitter.im/xDrivenDevelopment/precommit1c](https://badges.gitter.im/xDrivenDevelopment/precommit1c.svg)](https://gitter.im/xDrivenDevelopment/precommit1c?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ### Что к чему
 ----
 * v8files-extractor.os (рекомендуется для разборки файлов) - скрипт для OneScript, получающий список помещаемых файлов при коммите, фильтрующий по расширению только  внешние отчёты/обработки и запускающий внешнюю обработку для распаковки этих файлов.
