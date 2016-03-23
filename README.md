@@ -16,7 +16,7 @@
     * установленная платформа 1С:Предприятие 8
     * git
     * в случае запуска из под wine необходим msscriptcontrol
-    * **develop**-версия библиотек [oscript-library]( https://github.com/EvilBeaver/oscript-library)
+    * Библиотеки [oscript-library]( https://github.com/EvilBeaver/oscript-library)
 
 2. По умолчанию считается, что пути к oscript.exe и git.exe находятся в переменной path, иначе необходимо указать явный путь в файлах pre-commit
 
